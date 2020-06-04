@@ -4,14 +4,17 @@
       <h2>Monkey AST Visualizer</h2>
       <p>
         A frontend to feature my port to TypeScript of the components from
-        "Writing An Interpreter In Go" by Thorsten Bell for generating an AST.
-        Links to his books (which I recommend) can be found below.
+        "Writing An Interpreter In Go" by Thorsten Bell (links to his books
+        below) for generating an AST.
       </p>
       <p>
-        <a href="https://github.com/brombaut/monkey-parser">GitHub</a>
+        Type some Monkey code in the textarea above and click the cog to see the
+        generated AST for the program.
       </p>
       <p>
-        <a href="https://www.npmjs.com/package/@brombaut/monkey-parser">NPM</a>
+        <a href="https://github.com/brombaut/monkey-parser"
+          >Monkey Parser Repo</a
+        >
       </p>
     </div>
     <MonkeyExplained />
@@ -35,6 +38,7 @@ aside {
   overflow-y: auto;
   text-align: left;
   background: lighten(#5e00cf, 15%);
+  border-radius: 8px;
 
   h1,
   h2,
