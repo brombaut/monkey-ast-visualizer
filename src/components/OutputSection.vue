@@ -1,6 +1,13 @@
 <template>
   <section id="output-section">
-    <textarea v-model="astString" />
+    <textarea
+      v-model="astString"
+      readonly
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck="false"
+    />
   </section>
 </template>
 

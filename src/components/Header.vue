@@ -1,5 +1,7 @@
 <template>
-  <header></header>
+  <header>
+    <h1>Monkey AST Visualizer</h1>
+  </header>
 </template>
 
 <script>
@@ -10,7 +12,5 @@ export default {
 
 <style lang="scss">
 header {
-  height: 60px;
-  background: lightgrey;
 }
 </style>

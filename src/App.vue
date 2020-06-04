@@ -2,7 +2,8 @@
   <div id="app">
     <Header />
     <main>
-      <InputSection @generate="generateAst" />
+      <InputSection ref="inputComponent" @enterKey="generateAst()" />
+      <FontAwesomeIcon id="generate-icon" icon="cog" @click="generateAst()" />
       <OutputSection :astString="astString" />
     </main>
   </div>
@@ -12,6 +13,7 @@
 import Header from "./components/Header.vue";
 import InputSection from "./components/InputSection.vue";
 import OutputSection from "./components/OutputSection.vue";
+import MonkeyParserWrapper from "./services/monkey-parser-wrapper";
 
 export default {
   name: "App",
@@ -25,10 +27,30 @@ export default {
       astString: ""
     };
   },
-  methods: {
-    generateAst(input) {
-      this.astString = input;
+  computed: {
+    programString() {
+      return this.$refs.inputComponent.userInput;
     }
+  },
+  methods: {
+    generateAst() {
+      const input = this.programString;
+      this.astString = MonkeyParserWrapper.parse(input);
+      this.rotateCog();
+    },
+    rotateCog() {
+      const cog = document.querySelector("#generate-icon");
+      if (cog.classList.contains("fullRotation")) {
+        return;
+      }
+      cog.classList.add("fullRotation");
+      setTimeout(() => {
+        cog.classList.remove("fullRotation");
+      }, 300);
+    }
+  },
+  mounted() {
+    this.generateAst();
   }
 };
 </script>
@@ -49,10 +71,39 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background: lightgray;
+  padding: 0 8px;
 
   main {
     flex: 1;
     display: flex;
+
+    #generate-icon {
+      font-size: 3rem;
+      align-self: center;
+      margin: 16px;
+
+      &:hover {
+        cursor: pointer;
+        filter: brightness(150%);
+      }
+
+      &.fullRotation {
+        animation-name: spin;
+        animation-duration: 2000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
   }
 }
 </style>

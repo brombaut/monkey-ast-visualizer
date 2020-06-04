@@ -1,22 +1,34 @@
 <template>
   <section id="input-section">
-    <textarea id="input-textarea" v-model="programString" />
-    <FontAwesomeIcon id="generate-icon" icon="cog" @click="generateClicked" />
+    <textarea
+      id="input-textarea"
+      v-model="userInput"
+      v-on:keyup.enter="enterKey"
+    />
   </section>
 </template>
 
 <script>
+// eslint-disable-next-line no-unused-vars
+const defaultValueShort = "let x = 1;";
+// eslint-disable-next-line no-unused-vars
+const defaultValueLong = `let x = 1;
+let y = 2;
+let add = fn(a, b) { return a + b };
+let result = add(x, y);
+`;
 export default {
   name: "InputSection",
   data() {
     return {
-      programString: ""
+      userInput: defaultValueShort
     };
   },
   methods: {
-    generateClicked() {
-      console.log(this.programString);
-      this.$emit("generate", this.programString);
+    enterKey(e) {
+      if (e.ctrlKey) {
+        this.$emit("enterKey");
+      }
     }
   }
 };
@@ -27,24 +39,10 @@ export default {
   flex: 1;
   border-right: 1px solid lightgray;
   display: flex;
-  position: relative;
 
   textarea {
     resize: none;
     flex: 1;
-  }
-
-  #generate-icon {
-    font-size: 3rem;
-    position: absolute;
-    right: calc(-1px - 1.5rem);
-    top: calc(50% - 3rem);
-    background: white;
-
-    &:hover {
-      cursor: pointer;
-      filter: brightness(150%);
-    }
   }
 }
 </style>
