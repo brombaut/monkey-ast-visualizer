@@ -5,6 +5,7 @@
       <InputSection ref="inputComponent" @enterKey="generateAst()" />
       <FontAwesomeIcon id="generate-icon" icon="cog" @click="generateAst()" />
       <OutputSection :astString="astString" />
+      <InformationAside />
     </main>
   </div>
 </template>
@@ -13,6 +14,7 @@
 import Header from "./components/Header.vue";
 import InputSection from "./components/InputSection.vue";
 import OutputSection from "./components/OutputSection.vue";
+import InformationAside from "./components/InformationAside.vue";
 import MonkeyParserWrapper from "./services/monkey-parser-wrapper";
 
 export default {
@@ -20,7 +22,8 @@ export default {
   components: {
     Header,
     InputSection,
-    OutputSection
+    OutputSection,
+    InformationAside
   },
   data() {
     return {
@@ -69,6 +72,7 @@ body {
   text-align: center;
   color: #2c3e50;
   height: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   background: #5e00cf;
@@ -77,7 +81,7 @@ body {
   main {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 
     #generate-icon {
       font-size: 3rem;

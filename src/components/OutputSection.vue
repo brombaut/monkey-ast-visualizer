@@ -22,15 +22,17 @@ export default {
 
 <style lang="scss">
 #output-section {
-  flex: 1;
+  // flex: 1;
   border-left: 1px solid lightgray;
   display: flex;
   margin-bottom: 8px;
-  max-width: 700px;
+  // max-width: 700px;
+  flex: 1;
 
   textarea {
     resize: none;
     flex: 1;
+    overflow: auto;
   }
 }
 </style>
