@@ -25,6 +25,8 @@ export default {
   flex: 1;
   border-left: 1px solid lightgray;
   display: flex;
+  margin-bottom: 8px;
+  max-width: 700px;
 
   textarea {
     resize: none;

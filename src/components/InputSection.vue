@@ -21,7 +21,7 @@ export default {
   name: "InputSection",
   data() {
     return {
-      userInput: defaultValueShort
+      userInput: defaultValueLong
     };
   },
   methods: {
@@ -39,6 +39,8 @@ export default {
   flex: 1;
   border-right: 1px solid lightgray;
   display: flex;
+  max-width: 400px;
+  margin-bottom: 8px;
 
   textarea {
     resize: none;

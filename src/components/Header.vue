@@ -12,5 +12,14 @@ export default {
 
 <style lang="scss">
 header {
+  color: #ffdd00;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: "Piedra", cursive;
+    margin-bottom: 12px;
+  }
 }
 </style>

@@ -71,17 +71,19 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: lightgray;
+  background: #5e00cf;
   padding: 0 8px;
 
   main {
     flex: 1;
     display: flex;
+    justify-content: center;
 
     #generate-icon {
       font-size: 3rem;
       align-self: center;
       margin: 16px;
+      color: #ffdd00;
 
       &:hover {
         cursor: pointer;
