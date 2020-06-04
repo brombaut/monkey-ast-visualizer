@@ -130,14 +130,6 @@ export default {
 </script>
 
 <style lang="scss">
-h1,
-h2,
-h3,
-h4,
-h5 {
-  color: #ffdd00;
-}
-
 pre {
   background: white;
   padding: 4px;

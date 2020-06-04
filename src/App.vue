@@ -2,10 +2,12 @@
   <div id="app">
     <Header />
     <main>
-      <InputSection ref="inputComponent" @enterKey="generateAst()" />
+      <div class="left-column">
+        <InputSection ref="inputComponent" @enterKey="generateAst()" />
+        <InformationAside />
+      </div>
       <FontAwesomeIcon id="generate-icon" icon="cog" @click="generateAst()" />
       <OutputSection :astString="astString" />
-      <InformationAside />
     </main>
   </div>
 </template>
@@ -83,11 +85,19 @@ body {
     display: flex;
     justify-content: space-around;
 
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      height: calc(100vh - 120px);
+    }
+
     #generate-icon {
       font-size: 3rem;
-      align-self: center;
+      align-self: flex-start;
       margin: 16px;
       color: #ffdd00;
+      margin-top: 40px;
 
       &:hover {
         cursor: pointer;

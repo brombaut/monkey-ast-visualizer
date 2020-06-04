@@ -37,9 +37,7 @@ export default {
 <style lang="scss">
 #input-section {
   flex: 1;
-  border-right: 1px solid lightgray;
   display: flex;
-  max-width: 400px;
   margin-bottom: 8px;
 
   textarea {

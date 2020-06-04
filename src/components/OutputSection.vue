@@ -22,7 +22,6 @@ export default {
 
 <style lang="scss">
 #output-section {
-  // flex: 1;
   border-left: 1px solid lightgray;
   display: flex;
   margin-bottom: 8px;
