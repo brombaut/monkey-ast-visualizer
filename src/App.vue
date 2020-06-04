@@ -2,8 +2,8 @@
   <div id="app">
     <Header />
     <main>
-      <InputSection />
-      <OutputSection />
+      <InputSection @generate="generateAst" />
+      <OutputSection :astString="astString" />
     </main>
   </div>
 </template>
@@ -19,6 +19,16 @@ export default {
     Header,
     InputSection,
     OutputSection
+  },
+  data() {
+    return {
+      astString: ""
+    };
+  },
+  methods: {
+    generateAst(input) {
+      this.astString = input;
+    }
   }
 };
 </script>

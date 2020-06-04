@@ -1,12 +1,15 @@
 <template>
   <section id="output-section">
-    <textarea />
+    <textarea v-model="astString" />
   </section>
 </template>
 
 <script>
 export default {
-  name: "OutputSection"
+  name: "OutputSection",
+  props: {
+    astString: String
+  }
 };
 </script>
 
