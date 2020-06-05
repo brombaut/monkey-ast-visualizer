@@ -7,6 +7,7 @@
       autocorrect="off"
       autocapitalize="off"
       spellcheck="false"
+      wrap="soft"
     />
   </section>
 </template>
@@ -25,11 +26,11 @@ export default {
   display: flex;
   margin-bottom: 8px;
   flex: 1;
+  overflow-x: auto;
 
   textarea {
     resize: none;
     flex: 1;
-    overflow: auto;
     border-radius: 8px;
     padding: 8px;
   }

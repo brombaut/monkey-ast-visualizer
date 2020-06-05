@@ -49,8 +49,10 @@ aside {
   }
 
   p,
-  a {
+  a,
+  li {
     color: #fdcc0d;
+    font-weight: 600;
   }
 }
 </style>

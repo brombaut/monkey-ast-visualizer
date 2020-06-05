@@ -1,9 +1,10 @@
 const parser = require("@brombaut/monkey-parser");
 
 const parse = function(input) {
-  parser.parse(input);
-  if (parser.errors().length > 0) {
-    return parser.errors();
+  try {
+    parser.parse(input);
+  } catch (e) {
+    return parser.errors().join("\n");
   }
   const ast = parser.ast();
   return JSON.stringify(JSON.parse(ast), null, 4);
