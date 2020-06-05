@@ -38,7 +38,7 @@ export default {
 #input-section {
   flex: 1;
   display: flex;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 
   textarea {
     resize: none;
