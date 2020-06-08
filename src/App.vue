@@ -84,6 +84,7 @@ body {
     flex: 1;
     display: flex;
     justify-content: space-around;
+    height: calc(100% - 120px);
 
     .left-column {
       display: flex;
