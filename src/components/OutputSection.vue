@@ -43,7 +43,6 @@ export default {
   },
   watch: {
     astString() {
-      console.log("WATCH");
       this.buildHtml();
     }
   },
